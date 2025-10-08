@@ -63,8 +63,3 @@ class RestAPIClient:
 
         print(f"📁 Saved {len(time_series)} rows to '{filename}'.")
 
-# Example usage:
-# if __name__ == "__main__":
-#     api = RestAPIClient("E7LHCW66U9WKNNSD")
-#     candles = api.fetch_intraday_candles("MSFT", "30min")
-#     api.save_to_csv(candles, "MSFT_30min_candles.csv")
