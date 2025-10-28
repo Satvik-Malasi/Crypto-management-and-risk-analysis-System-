@@ -167,7 +167,7 @@ def main():
     # === STEP 5: EMAIL REPORT ===
     SENDER_EMAIL = "shivamBhai12102025@gmail.com"
     SENDER_PASSWORD = "crvm lkjh tgxd qtkx"  # Use an app password if Gmail
-    RECEIVER_EMAIL = "malasisatvik16@gmail.com"
+    RECEIVER_EMAIL = "akashnegi26.3@gmail.com"
 
     print("\n📧 Sending report via email...")
     emailer = EmailSender(SENDER_EMAIL, SENDER_PASSWORD)
