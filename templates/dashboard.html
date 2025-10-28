@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Stock Investment Dashboard</h1>
+
+    <form method="POST" class="input-form">
+      <input type="text" name="email" placeholder="Your Email ID">
+      <input type="text" name="stock_name" placeholder="Stock Name (e.g., AAPL)">
+      <input type="number" name="quantity" placeholder="Quantity">
+      <button type="submit" name="add_stock">Add Stock</button>
+      <button type="submit" name="generate_report" class="report-btn">Generate Report</button>
+    </form>
+
+    <div class="stock-list">
+      <h3>Available Stocks</h3>
+      <p class="note">You can enter only the stocks listed below.</p>
+      <ul>
+        <li>AAPL – Apple Inc.</li>
+        <li>MSFT – Microsoft Corporation</li>
+        <li>GOOGL – Alphabet Inc.</li>
+        <li>AMZN – Amazon.com, Inc.</li>
+        <li>TSLA – Tesla, Inc.</li>
+        <li>JPM – JPMorgan Chase & Co.</li>
+        <li>BAC – Bank of America Corporation</li>
+        <li>FB – Meta Platforms, Inc.</li>
+        <li>BTC/USD – Bitcoin</li>
+        <li>ETH/USD – Ethereum</li>
+        <li>BNB/USD – Binance Coin</li>
+        <li>LTC/USD – Litecoin</li>
+        <li>IBM – International Business Machines Corporation</li>
+        <li>INTC – Intel Corporation</li>
+        <li>CSCO – Cisco Systems, Inc.</li>
+        <li>KO – The Coca-Cola Company</li>
+        <li>PEP – PepsiCo, Inc.</li>
+        <li>WMT – Walmart Inc.</li>
+        <li>DIS – The Walt Disney Company</li>
+        <li>NVDA – NVIDIA Corporation</li>
+        <li>META – Meta Platforms, Inc.</li>
+        <li>UNH – UnitedHealth Group Incorporated</li>
+      </ul>
+    </div>
+
+    {% if stocks %}
+    <table>
+      <thead>
+        <tr>
+          <th>Email ID</th>
+          <th>Stock Name</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for stock in stocks %}
+        <tr>
+          <td>{{ stock.email }}</td>
+          <td>{{ stock.stock_name }}</td>
+          <td>{{ stock.quantity }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p>No stocks added yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
